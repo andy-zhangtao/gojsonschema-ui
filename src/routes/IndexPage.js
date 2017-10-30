@@ -9,6 +9,7 @@ function IndexPage () {
     <div className={styles.normal}>
       <Header/>
       <GoJsonSchema/>
+
     </div>
   )
 }

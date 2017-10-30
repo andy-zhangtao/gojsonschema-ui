@@ -1,11 +1,9 @@
 import request from '../utils/request'
 
-export function translate (jsons) {
-  // console.log('services')
-  // console.log(jsons)
+export function translate (jsons, name) {
   const base64Jsons = new Buffer(jsons).toString('base64')
   let values = {
-    name: 'Antd',
+    name: name,
     json: base64Jsons
   }
   // console.log(JSON.stringify(values))

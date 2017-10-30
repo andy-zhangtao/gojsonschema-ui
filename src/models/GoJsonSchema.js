@@ -18,7 +18,7 @@ export default {
       yield put({type: 'save'})
     },
     * translate ({payload}, {call, put}) {
-      const gs = yield call(netTool.translate, payload.jmsg)
+      const gs = yield call(netTool.translate, payload.jmsg, payload.name)
       const gostruct = gs.data.data
       yield put({
         type: 'save',
