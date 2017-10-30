@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import SourceJson from './SourceJson'
 import GoStruct from './GoStruct'
 import { Col, Row } from 'antd'
-import * as netTool from '../services/GoJsonSchema'
+import { connect } from 'dva'
+import * as jsonToSchema from 'json-schema-generator'
 
 class GoJsonSchema extends Component {
   constructor (props) {
@@ -11,6 +12,13 @@ class GoJsonSchema extends Component {
   }
 
   transferMsg (msg) {
+    const jmsg = JSON.stringify(this.convert(msg))
+    this.props.dispatch({
+      type: 'gojsonschema/translate',
+      payload: {
+        jmsg
+      },
+    })
     // this.setState({
     //   msg
     // })
@@ -22,6 +30,10 @@ class GoJsonSchema extends Component {
     // })
   }
 
+  convert (msg) {
+    return jsonToSchema.default(JSON.parse(msg))
+  }
+
   render () {
     return (
       <div>
@@ -30,7 +42,7 @@ class GoJsonSchema extends Component {
             <SourceJson transferMsg={msg => this.transferMsg(msg)}/>
           </Col>
           <Col span={11}>
-            <GoStruct value={this.state.msg}/>
+            <GoStruct value={this.props.gostruct}/>
           </Col>
         </Row>
       </div>
@@ -38,4 +50,13 @@ class GoJsonSchema extends Component {
   }
 }
 
-export default GoJsonSchema
+function mapStateToProps (state) {
+  // console.log('In the mapStateToProps')
+  // console.log(state)
+  const gostruct = state.gojsonschema.gostruct
+  return {
+    gostruct
+  }
+}
+
+export default connect(mapStateToProps)(GoJsonSchema)
