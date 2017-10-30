@@ -38,10 +38,13 @@ class GoJsonSchema extends Component {
     return (
       <div>
         <Row gutter={16}>
-          <Col span={11} offset={1}>
+          <Col span={22} offset={1}>
             <SourceJson transferMsg={msg => this.transferMsg(msg)}/>
           </Col>
-          <Col span={11}>
+        </Row>
+        <div style={{padding: '20px'}} />
+        <Row>
+          <Col span={22} offset={1}>
             <GoStruct value={this.props.gostruct}/>
           </Col>
         </Row>

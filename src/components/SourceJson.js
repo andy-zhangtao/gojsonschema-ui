@@ -26,10 +26,12 @@ class SourceJson extends Component {
     return (
       <div>
         <TextArea
+          placeholder="这里输入JSON"
           autosize={{minRows: 2, maxRows: 19}}
           onChange={this.onInputChange}
         />
-        <Button icon="sync" onClick={this.handleBtnOnClick}>转换</Button>
+        <div style={{padding: '5px'}} />
+        <Button  type="primary" size="large" icon="sync" onClick={this.handleBtnOnClick}>转换</Button>
       </div>
     )
   }
