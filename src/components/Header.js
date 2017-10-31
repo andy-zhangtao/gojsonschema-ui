@@ -11,7 +11,7 @@ class Header extends Component {
           </Col>
           <Col span={1} push={10}>
             <a href='https://github.com/andy-zhangtao/gojsonschema'>
-              <img alt='github' src='https://img.shields.io/github/forks/andy-zhangtao/gojsonschema.svg?style=social'/>
+              <img alt='github' src='https://img.shields.io/github/stars/andy-zhangtao/gojsonschema.svg?style=social'/>
             </a>
           </Col>
           <Col span={1} push={11}>

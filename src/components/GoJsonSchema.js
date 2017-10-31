@@ -25,6 +25,7 @@ class GoJsonSchema extends Component {
       openNotificationWithIcon('warning', '类名出错', 'GoStruct 类名不得为空')
     } else {
       const jmsg = JSON.stringify(this.convert(msg))
+      // console.log(jmsg)
       this.props.dispatch({
         type: 'gojsonschema/translate',
         payload: {
