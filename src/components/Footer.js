@@ -6,7 +6,7 @@ class Footer extends Component{
       <Row>
         <Col span={24}>
           <div style={{padding: '20px'}}/>
-          © 2017 Json-GoStruct. All rights reserved. ztao8607@gmail.com
+          © 2018 Json-GoStruct. All rights reserved. ztao8607@gmail.com
         </Col>
       </Row>
     )

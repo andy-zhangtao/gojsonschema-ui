@@ -8,7 +8,7 @@ export function translate (jsons, name) {
   }
   // console.log(JSON.stringify(values))
 
-  return request('https://jp.openss.cc:9006/v1/post/json', {
+  return request('http://jp.openss.cc:9006/v1/post/json', {
     method: 'POST',
     body: JSON.stringify(values)
   })
